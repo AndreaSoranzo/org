@@ -57,7 +57,6 @@ di supporto e la gestione del personale.
                     \item Presenta il Diario di Bordo in aula;
                     \item Suddivide le attività del gruppo;
                     \item Approva i documenti prima di eseguire il merge nel branch "main", aggiornando la versione del documento e quindi andando ad incrementare il numero più a sinistra;
-                    \item Redige i verbali.
                 \end{itemize}
                 \item \textbf{Amministratore di sistema}\\
                 Colui che si occupa del funzionamento, mantenimento e sviluppo degli strumenti e ambienti tecnologici
@@ -67,10 +66,11 @@ di supporto e la gestione del personale.
                     \item Ad ogni sprint si hanno al massimo due Amministratori;
                     \item Gestisce le segnalazioni e problemi dei membri del gruppo relativi a malfunzionamenti e difficoltà con gli strumenti tecnologici;
                     \item Valuta l'utilizzo di nuove tecnologie e ne fa uno studio preliminare per poter presentare al
-                        gruppo i pro e i contro del suo utilizzo;
+                    gruppo i pro e i contro del suo utilizzo;
                     \item Controlla giornalmente la board e issue per garantire una buona organizzazione;
                     \item Controlla se la documentazione è aggiornata;
-                    \item Redige i verbali nel caso in cui il responsabile sia impossibilitato.
+                    \item Presenta il Diario di Bordo in aula nel caso il responsabile non sia presente;
+                    \item Redige i verbali.
                     \end{itemize}
                     \item \textbf{Analista}\\
                     Colui che si occupa di analizzare a fondo il capitolato e le richieste del proponente per estrarne i requisiti.
@@ -213,9 +213,9 @@ di supporto e la gestione del personale.
             attraverso una pull request verso il branch da cui esso è stato derivato;\\
             I nomi di questi branch, per quanto riguarda la documentazione, si suddividono in 2 casi:
             \begin{itemize}
-                \item \textbf{Per Verbali e Glossario}:
+                \item \textbf{Per Glossario}:
                 \begin{center}
-                    \textbf{\textit{docs/[NOME-DOCUMENTO]-[COGNOME-ASSEGNATARIO]}}
+                    \textbf{\textit{docs/glossario-[COGNOME-ASSEGNATARIO]}}
                 \end{center}
                 \item \textbf{Per tutto il resto della documentazione}:
                 \begin{center}
@@ -246,10 +246,6 @@ di supporto e la gestione del personale.
         \end{itemize}
 
         In ogni branch secondario il lavoro può essere svolto da un solo componente del gruppo, specificatamente colui che ha preso in carico l'issue alla cui risoluzione quel branch è dedicato.
-        È tuttavia possibile assegnare una issue a più persone; in tal caso, a ciascun assegnatario verrà dedicato un branch su cui lavorare. Al termine delle modifiche, prima di aprire la pull request 
-        per la verifica del lavoro svolto, sarà necessario eseguire il merge dei vari branch secondari tramite una pull request specifica. Quest'ultima non richiederà ulteriori verifiche, poiché tali attività
-        saranno eseguite nell'apposita pull request destinata a questo scopo.
-    
          
         Una volta che la issue viene risolta il componente deve richiedere una pull request
         verso il branch da cui esso è stato derivato.
@@ -270,16 +266,15 @@ di supporto e la gestione del personale.
         modifiche sarà necessario aprire una pull request, motivo per il quale abbiamo introdotto dei branch derivati.
         I messaggi di commit dovranno seguire la seguenti strutture sintattiche:
         \begin{center}
-            \textbf{add: [NOME-DOCUMENTO]\\
+            \textbf{add: [COSA]\\
             change: [COSA]\\
             restructure: [COSA]}
         \end{center}
         dove: 
         \begin{itemize}
-            \item \textbf{add}: viene utilizzato per il primo un primo commit;
-            \item \textbf{change}: per i successivi commit, nei quali si va a modificare il documento già esistente;
+            \item \textbf{add}: viene utilizzato quando si va ad aggiungere una nuova sezione/sottosezione ad un documento;
+            \item \textbf{change}: viene utilizzato quando si va a modificare una o più sezioni/sottosezioni di un documento;
             \item \textbf{restructure}: indica una ristrutturazione del branch main per quanto riguarda l'organizzazione delle cartelle e/o la modifica di action o template di issue;
-            \item \textbf{NOME-DOCUMENTO}: indica il nome del documento creato;
             \item \textbf{COSA}: breve descrizione di cosa di è aggiunto e/o fatto.
         \end{itemize}
 
@@ -382,6 +377,7 @@ di supporto e la gestione del personale.
         alla priorità, ruoli e disponibilità.
         Per marcare le issue secondo criteri di interesse vengono utilizzate delle label:
         \begin{itemize}
+            \item \textbf{correction}: indica una issue o pull request relativa ad una correzione alla documentazione;
             \item \textbf{bug}: indica una issue o pull request relativa ad un errore/bug nel codice;
             \item \textbf{code}: indica una issue o pull request relativa al codice;
             \item \textbf{documentation}: indica una issue o pull request relativa alla documentazione;
