@@ -1,67 +1,200 @@
+\newcommand{\Met}[3]{
+    \subsubsection{#1}
+    \begin{figure}[h!] \centering
+        \includegraphics[scale=0.55]{#2}
+        \caption{Proiezione della#1nei vari periodi di progetto}
+    \end{figure}
+    \subsubsection*{RTB}
+    #3
+    \newpage
+}
+
 \section{Resoconto delle attività di verifica}
 
 \subsection{Verifica della qualità dei processi}
 In questa sezione sono presentati i risultati dell'attività di verifica svolta per valutare la qualità del processo.\\
-Le misure riportate sono state calcolate utilizzando le formule e i concetti descritti nel documento \textit{Norme di Progetto}, oltre ai dati definiti nel documento \textit{Piano di Progetto}.
-
-\input{template/metrics_results_table}
-\metricsResultsTable{
-    Planned Value & - & -\tabularnewline
-    Actual Cost & - & -\tabularnewline 
-    Earned Value & - & -\tabularnewline  
-    Estimate at Completion & - & -\tabularnewline  
-    Estimate to Complete & - & -\tabularnewline  
-    Cost Variance & - & -\tabularnewline  
-    Schedule Variance & - & -\tabularnewline  
-    Budget Variance & - & -\tabularnewline  
-    Requirements Stability Index & - & -\tabularnewline  
-    Completezza dei documenti & - & -\tabularnewline  
-    Metriche soddisfatte & - & -\tabularnewline  
-    Code Coverage & - & -\tabularnewline
-    Statement Coverage & - & -\tabularnewline 
-    Branch Coverage & - & -\tabularnewline 
-    Rischi non previsti & - & -\tabularnewline  
-}
+Le misure riportate sono state calcolate utilizzando le formule e i concetti descritti nel documento \textit{Norme di progetto}, oltre ai dati definiti nel documento \textit{Piano di progetto}.
 
 In seguito sono presentati i grafici relativi a diverse metriche significative del processo nei vari sprint.
 
-\subsubsection{Planned Value}
+\Met
+{ % METRICA
+    MPC1 - Planned Value
+}
+{ % GRAFICO
+    template/images/PV.png
+}
+{ % DESCRIZIONE RTB
+    Il grafico mostra una crescita dei costi regolare e prevedibile, coerente con una pianificazione accurata che suddivide equamente il budget tra i vari sprint.
+    Questo è un valore positivo e significa che il team riesce a pianificare nel modo corretto le ore per ogni ruolo ad ogni print.
+}
 
-\subsubsection{Actual Cost}
+\Met
+{ % METRICA
+    MPC2 - Actual Cost
+}
+{ % GRAFICO
+    template/images/AC.png
+}
+{ % DESCRIZIONE RTB
+    Come il grafico fa notare il confronto con il Planned Value rivela una forte correlazione, suggerendo che le ore e i costi effettivamente impiegati per ogni ruolo sono in linea con le previsioni iniziali.
+    Ciò indica una pianificazione accurata e una buona esecuzione del progetto.
+}
 
-\subsubsection{Earned Value}
+\Met
+{ % METRICA
+    MPC3 - Earned Value
+}
+{ % GRAFICO
+    template/images/EV.png
+}
+{ % DESCRIZIONE RTB
+    Questo grafico illustra solamente il valore di Earned Value che rappresenta il valore delle attività realizzate nel progetto.
+    Da solo rientra tra i valori limite, e rappresenta un valor positivo, ma spesso viene messo a confronto con le altre metriche.
+    Analizzando quindi i 3 grafici di Earned Value, Planned Value e Actual Cost si può notare come siano tutti allineati. 
+    Questo indica una gestione del progetto accurata, con una precisa corrispondenza tra le attività pianificate, quelle effettivamente svolte e i costi sostenuti.
+}
 
-\subsubsection{Cost Variance}
+\Met
+{ % METRICA
+    MPC4 - Estimated at Completion
+}
+{ % GRAFICO
+    template/images/EaC.png
+}
+{ % DESCRIZIONE RTB
+    Il grafico mostra che l'Estimated at Completion (EAC) è molto vicino al Budget at Completion (BAC).
+    Questo indica un'elevata precisione della stima iniziale dei costi e una gestione finanziaria efficace durante i periodi del progetto. 
+}
 
-\subsubsection{Schedule Variance}
+\Met
+{ % METRICA
+    MPC5 - Estimate to Complete
+}
+{ % GRAFICO
+    template/images/EtC.png
+}
+{ % DESCRIZIONE RTB
+    Il grafico evidenzia una relazione inversa tra ETC e AC.
+    La tendenza all'abbassamento dell'ETC e all'aumento dell'AC è coerente con l'andamento previsto. 
+    Questa dinamica suggerisce una buona gestione delle risorse e un avanzamento del progetto conforme alla pianificazione.
+}
 
-\subsubsection{Budget Variance}
+\Met
+{ % METRICA
+    MPC6 - Cost Variance
+}
+{ % GRAFICO
+    template/images/CV.png
+}
+{ % DESCRIZIONE RTB
+    L'analisi del grafico evidenzia una sovrastima iniziale delle ore necessarie per completare le attività.
+    Con il progredire del progetto, il team ha affinato le proprie stime, acquisendo una maggiore consapevolezza dei tempi di esecuzione e delle competenze individuali.
+}
+
+\Met
+{ % METRICA
+    MPC7 - Schedule Variance
+}
+{ % GRAFICO
+    template/images/SV.png
+}
+{ % DESCRIZIONE RTB
+    L'analisi del grafico evidenzia che, inizialmente, l'assenza di un WoW solido ha impedito al team di rispettare le tempistiche previste. 
+    Con l'introduzione e il consolidamento del WoW, il team ha ottimizzato la pianificazione e l'esecuzione delle attività, migliorando significativamente il rispetto delle scadenze.
+}
+
+\Met
+{ % METRICA
+    MPC8 - Budget Variance
+}
+{ % GRAFICO
+    template/images/BV.png
+}
+{ % DESCRIZIONE RTB
+    L'analisi del grafico indica che il team sta impiegando un po' meno risorse rispetto alle previsioni iniziali.
+    Questo dimostra una gestione efficiente e un'ottima capacità di adattamento alle esigenze del progetto.
+}
+
+\Met
+{ % METRICA
+    MPC9 - Requirements Stability Index
+}
+{ % GRAFICO
+    template/images/RSI.png
+}
+{ % DESCRIZIONE RTB
+    Il grafico mostra un iniziale Requirements Stability Index del 100\% in quanto nei primi due periodi il team si è
+    concentrato sulla creazione e successivo aggiornamento di un WoW. 
+    È stato solo dal terzo sprint in poi che il team ha iniziato ad analizzare e successivamente raffinare i requisiti, rendendoli più chiari e comprensibili per facilitare le successive fasi di progettazione.
+}
+
+\Met
+{ % METRICA
+    MPC10 - Completezza dei documenti
+}
+{ % GRAFICO
+    template/images/CD.png
+}
+{ % DESCRIZIONE RTB  
+    Come mostrato dal grafico il team ha raramente avuto problemi riguardanti la completezza dei documenti.
+    Si può notare che solamente durante lo sprint 3 il team ha avuto delle difficoltà nella redazione del documento \textit{Analisi dei requisiti}.
+    In ogni caso, tutti i membri si sono impegnati al massimo per garantire il completamento delle attività assegnate.
+}
+
+\Met
+{ % METRICA
+    MPC11 - Metriche soddisfatte
+}
+{ % GRAFICO
+    template/images/MS.png
+}
+{ % DESCRIZIONE RTB
+    Come mostra il grafico, l'iniziale carenza di competenze ha limitato la capacità del team di soddisfare tutte le metriche.
+    Grazie all'apprendimento continuo e all'introduzione di strumenti automatizzati, il team ha colmato queste lacune apportando delle migliorie ai vari documenti.
+}
+
+\Met
+{ % METRICA
+    MPC15 - Rischi non previsti
+}
+{ % GRAFICO
+    template/images/RISCHI.png
+}
+{ % DESCRIZIONE RTB
+    Il grafico evidenzia una notevole stabilità dei rischi non previsti durante l'intero progetto.
+    Questo è ovviamente un ottimo segno in quanto indica che il gruppo è stato in grado di gestire i rischi in modo efficace e che non sono 
+    emersi nuovi rischi inaspettati.
+}
 
 \subsection{Verifica della qualità dei prodotti}
-In questa sezione vengono analizzate le attività svolte per garantire la qualità dei prodotti realizzati. Le analisi effettuate comprendono sia i documenti che il software, al fine di garantire un risultato finale che soddisfi i requisiti stabiliti.\\
-Per calcolare le seguenti misure abbiamo utilizzato le formule e le nozioni descritte nel documento di \textit{Norme di Progetto}.
+In questa sezione vengono analizzate le attività svolte per garantire la qualità dei prodotti realizzati.
+ Le analisi effettuate comprendono sia i documenti che il software, al fine di garantire un risultato finale che soddisfi i requisiti stabiliti.\\
+Per calcolare le seguenti misure abbiamo utilizzato le formule e le nozioni descritte nel documento di \textit{Norme di progetto}.
 
-\subsubsection{Indice di Gulpease}
-Nella tabella sottostante sono riportati gli indici di Gulpease calcolati sulle versioni più recenti dei documenti elencati.\\
-Per ottenere tali valori, sono state considerate sezioni di testo in paragrafi, celle di tabelle e liste.
-
-\input{template/gulpease_table.tex}
-\gulpeaseTable{
-    VE 2024-12-19 & 47 & Non superato\tabularnewline
-    VE 2024-11-28 & 52 & Superato\tabularnewline
-    VE 2024-10-30 & 47 & Non superato\tabularnewline
-    VE 2024-10-28 & 45 & Non superato\tabularnewline
-    VE 2024-10-24 & 56 & Superato\tabularnewline
-    VI 2024-12-13 & 47 & Non superato\tabularnewline
-    VI 2024-12-05 & 49 & Non superato\tabularnewline
-    VI 2024-11-22 & 60 & Superato\tabularnewline
-    VI 2024-11-14 & 63 & Superato\tabularnewline
-    VI 2024-11-08 & 48 & Non superato\tabularnewline
-    VI 2024-11-04 & 39 & Non superato\tabularnewline
-    VI 2024-10-25 & 53 & Superato\tabularnewline
-    VI 2024-10-19 & 45 & Non superato\tabularnewline
-    VI 2024-10-16 & 48 & Non superato\tabularnewline
-    
+\Met
+{ % METRICA
+    MPD1 - Indice Gulpease
 }
+{ % GRAFICO
+    template/images/GUL.png
+}
+{ % DESCRIZIONE RTB
+    L'analisi del grafico conferma che, nelle prime fasi del progetto, l'Indice di Gulpease non ha raggiunto i valori minimi, a causa della mancanza di conoscenze specifiche da parte del team.
+    Solo dopo aver implementato un'automazione per il calcolo dell'indice, è stato possibile migliorarne i risultati nei periodi successivi.
+}
+
+\Met
+{ % METRICA
+    MPD2 - Errori grammaticali
+}
+{ % GRAFICO
+    template/images/ERR-G.png
+}
+{ % DESCRIZIONE RTB
+    L'analisi del grafico rivela un numero inizialmente elevato di errori ortografici, in particolare nei documenti \textit{Norme di progetto} e \textit{Piano di progetto}.
+    Tuttavia, si osserva una netta diminuzione di tali errori nei periodi e nei documenti successivi, indicando un miglioramento progressivo nella qualità della scrittura.
+}
+
 
 
