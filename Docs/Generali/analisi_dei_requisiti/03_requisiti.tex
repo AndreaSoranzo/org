@@ -101,6 +101,13 @@ Sono stati definiti dei requisiti codificati in base all’ambito di competenza 
 tenerne meglio traccia. Nelle tabelle sottostanti sono forniti descrizione e classificazione di ciascun
 requisito. 
 Per la codifica dei requisiti si faccia riferimento alle \textit{Norme di progetto}.
+
+\subsection{Requisiti minimi hardware}
+6-8GB RAM, CPU intel i5 (se Windows), GPU ? (per diminuire il tempo di caricamento)
+
+
+
+
 \subsection{Requisiti funzionali}
 \requirementsTable{
     % VISUALIZZAZIONE DATASET
@@ -151,9 +158,9 @@ Per la codifica dei requisiti si faccia riferimento alle \textit{Norme di proget
     \RFM & L’utente deve poter filtrare un numero N dei valori più bassi & Obbligatorio & UC16\par UC16.2\tabularnewline
     \RFM & L’utente deve poter inserire un numero per effettuare un filtraggio & Obbligatorio & UC16\par UC16.3\tabularnewline
     \RFM & L’utente deve poter filtrare i valori inferiori o uguali rispetto a un valore del grafico & Obbligatorio & UC17\par UC17.1\par UC17.1.1\tabularnewline
-    \RFM & L’utente deve poter filtrare i valori inferiori o uguali rispetto al valor medio globale & Obbligatorio & UC17\par UC17.1\par UC17.1.2\tabularnewline
+    \RFM & L’utente deve poter filtrare i valori inferiori o uguali rispetto al valore medio globale, ossia la media dei valori del grafico & Obbligatorio & UC17\par UC17.1\par UC17.1.2\tabularnewline
     \RFM & L’utente deve poter filtrare i valori superiori o uguali rispetto a un valore del grafico & Obbligatorio & UC17\par UC17.2\par UC17.2.1\tabularnewline
-    \RFM & L’utente deve poter filtrare i valori superiori o uguali rispetto al valor medio globale & Obbligatorio & UC17\par UC17.2\par UC17.2.2\tabularnewline
+    \RFM & L’utente deve poter filtrare i valori superiori o uguali rispetto al valore medio globale & Obbligatorio & UC17\par UC17.2\par UC17.2.2\tabularnewline
 
     %RESET
     \RFM & L’utente deve poter ripristinare lo stato del grafico
@@ -170,19 +177,19 @@ Per la codifica dei requisiti si faccia riferimento alle \textit{Norme di proget
 
    
 \subsection{Requisiti qualitativi}
-    
+   
 \requirementsTable{
     \RQM & Il software deve essere sviluppato seguendo le metriche e il modello di qualità descritti nel documento \textit{Norme di progetto}  & Obbligatorio  & Decisione interna \tabularnewline
     \RQM & Il software deve essere sviluppato pubblicando il codice sorgente nel repository Github dedicato  & Obbligatorio  & Decisione interna \tabularnewline
-    \RQM & Il software deve essere sviluppato in modo tale da supportare grandi volumi di dati   & Obbligatorio & Capitolato \tabularnewline
-    \RQM & L'architettura del software deve permettere, con agilità, di aggiungere nuove funzionalità e possibilità di iterazione con il grafico   & Obbligatorio  & Capitolato \tabularnewline
-    \RQM & La suite di test deve essere robusta per garantire quanto specificato nel RQ4  & Obbligatorio  & Capitolato \tabularnewline
-    \RQD & Il software deve essere testato attraverso test di tipo e2e  & Desiderabile  & Capitolato \tabularnewline  
+    \RQM & La consegna del progetto deve includere i diagrammi UML relativi ai casi d'uso identificati & Obbligatorio & Decisione interna \tabularnewline
+    \RQM & Il software deve essere testato attraverso test di tipo e2e, concentrando l'attenzione sulle funzionalità chiave che impattano negativamente sull'esperienza utente (non più di 10 funzionalità)  & Desiderabile  & Capitolato \tabularnewline 
+    \RQM & Deve essere consegnata la documentazione relativa ai test effettuati con i relativi risultati & Obbligatorio & Decisione interna \tabularnewline
 }
  \pagebreak
 \subsection{Requisiti di vincolo}
 \requirementsTable{
     \RVM & Il software deve essere sviluppato utilizzando Typescript come linguaggio di programmazione primario  & Obbligatorio  & Decisione interna \tabularnewline
+    \RVM & Il software deve supportare un massimo di 500 elementi per le coordinate X e Z mantenendo il limite di 1000 dati (es. con 500 righe, il massimo numero di colonne sarà pari a 5) & Obbligatorio & Decisione interna \tabularnewline
     \RVM & Il software deve essere sviluppato utilizzando la libreria React per la creazione di un'interfaccia visiva semplice  & Obbligatorio  & Decisione interna \tabularnewline
     \RVM & Il software deve essere sviluppato utilizzando la libreria Three.js   & Obbligatorio & Decisione interna \tabularnewline
     \RVM & Il software deve essere compatibile dalla versione 131 del browser Chrome  & Obbligatorio & Decisione interna \tabularnewline
