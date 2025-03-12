@@ -1,3 +1,7 @@
+<!-- TEMPLATE -->
+<!-- <li><a class="anim" href="valutazione_capitolati.pdf" target="_blank">valutazione_capitolati</a> <span class="tag-versione">1.0.0</span> </li> -->
+
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -23,51 +27,213 @@
             <div id="desc">
                 <p>
                     <span>Ingegneria del Software 2024/2025</span>
-                    <span>Università degli Studi di Padova</span>
+                    <span>Università degli Studi di Padova</spn>
                 </p>
             </div>
         </header>
 
-        <nav>
-            <ul>
-                <li><a href="#candidatura">Candidatura</a></li>
-                <li><a href="#generali">Generali</a></li>
-                <li><a href="#verbali_int">Verbali Interni</a></li>
-                <li><a href="#verbali_ext">Verbali Esterni</a></li>
-            </ul>
-        </nav>
 
         <main>
-            <div id="candidatura">
-                <h1>CANDIDATURA</h1>
-                <ul>
-                    {{Candidatura}}
-                </ul>
-            </div>
-            <div id="generali">
-                <h1>GENERALI</h1>
-                
-                {{Generali}}
-                
+            <div id="quicklinks" class="content center">
+                <a class="btn" href="https://github.com/6BitBusters/6BitBusters.github.io">Repository</a>
+                <a class="btn" href="https://github.com/6BitBusters/6BitBusters.github.io/tree/main/3Dataviz">3Dataviz</a>
             </div>
 
-            <div id="verbali_int">
-                <h2>VERBALI INTERNI</h2>
-                <ul>
-                    {{Verbali Interni}}
-                </ul>
+            <div id="docs">
+                <label class="expandable section center">
+                    <input type="checkbox" class="capitolato">
+                    Candidatura Capitolato
+                </label>
+                <div class="content capitolato center">
+                    
+                    <nav class="baseline-nav">
+                        <ul>
+                            <li>
+                                <a href="#generali_int_c">Generali interni</a>
+                                <a href="#verbali_ext_c">Verbali esterni</a>
+                                <a href="#verbali_int_c">Verbali interni</a>
+                            </li>
+                        </ul>
+                    </nav>
+    
+                    <div>
+                        <h2>LETTERA DI CANDIDATURA</h2>
+                        <ul>
+                            {{LETTERA_CAPITOLATO}}
+                        </ul>
+                    </div>
+    
+                    <div id="generali_int_c">
+                        <h2>GENERALI INTERNI</h2>
+                        <ul>
+                            {{GENERALI_INTERNI_CAPITOLATO}}
+                        </ul>
+                    </div>
+    
+                    <div id="verbali_ext_c">
+                        <h2>VERBALI ESTERNI</h2>
+                        <ul>
+                            {{VERBALI_ESTERNI_CAPITOLATO}}
+                        </ul>
+                    </div>
+        
+                    <div id="verbali_int_c">
+                        <h2>VERBALI INTERNI</h2>
+                        <ul>
+                            {{VERBALI_INTERNI_CAPITOLATO}}
+                        </ul>
+                    </div>
+    
+                </div>
+    
+    
+                <label class="expandable section center">
+                    <input type="checkbox" class="rtb">
+                    RTB
+                </label>
+                <div class="content rtb center">
+                    
+                    <nav class="baseline-nav">
+                        <ul>
+                            <li>
+                                <a href="#generali_ext_rtb">Generali esterni</a>
+                                <a href="#generali_int_rtb">Generali interni</a>
+                                <a href="#verbali_ext_rtb">Verbali esterni</a>
+                                <a href="#verbali_int_rtb">Verbali interni</a>
+                            </li>
+                        </ul>
+                    </nav>
+    
+                    <div>
+                        <h2>LETTERA DI CANDIDATURA</h2>
+                        <ul>
+                            {{LETTERA_RTB}}
+                        </ul>
+                    </div>
+    
+                    <div id="generali_ext_rtb">
+                        <h2>GENERALI ESTERNI</h2>
+                        <ul>
+                            {{GENERALI_ESTERNI_RTB}}
+                        </ul>
+                    </div>
+    
+                    <div id="generali_int_rtb">
+                        <h2>GENERALI INTERNI</h2>
+                        <ul>
+                            {{GENERALI_INTERNI_RTB}}
+                        </ul>
+                    </div>
+    
+                    <div id="verbali_ext_rtb">
+                        <h2>VERBALI ESTERNI</h2>
+                        <ul>
+                            {{VERBALI_ESTERNI_RTB}}
+                        </ul>
+                    </div>
+        
+                    <div id="verbali_int_rtb">
+                        <h2>VERBALI INTERNI</h2>
+                        <ul>
+                            {{VERBALI_INTERNI_RTB}}
+                        </ul>
+                    </div>
+    
+                </div>
+    
+                <label class="expandable section center">
+                    <input type="checkbox" class="pb">
+                    PB
+                </label>
+                <div class="content pb center">
+                    <nav class="baseline-nav">
+                        <ul>
+                            <li>
+                                <a href="#generali_ext_pb">Generali esterni</a>
+                                <a href="#generali_int_pb">Generali interni</a>
+                                <a href="#verbali_ext_pb">Verbali esterni</a>
+                                <a href="#verbali_int_pb">Verbali interni</a>
+                            </li>
+                        </ul>
+                    </nav>
+    
+                    <div>
+                        <h2>LETTERA DI CANDIDATURA</h2>
+                        <ul>
+                            {{LETTERA_PB}}
+                        </ul>
+                    </div>
+    
+                    <div id="generali_ext_pb">
+                        <h2>GENERALI ESTERNI</h2>
+                        <ul>
+                            {{GENERALI_INTERNI_RTB}}
+                        </ul>
+                    </div>
+                    <div id="generali_int_pb">
+                        <h2>GENERALI INTERNI</h2>
+                        <ul>
+                            {{GENERALI_INTERNI_PB}}
+                        </ul>
+                    </div>
+    
+                    <div id="verbali_ext_pb">
+                        <h2>VERBALI ESTERNI</h2>
+                        <ul>
+                            {{VERBALI_ESTERNI_PB}}
+                        </ul>
+                    </div>
+        
+                    <div id="verbali_int_pb">
+                        <h2>VERBALI INTERNI</h2>
+                        <ul>
+                            {{VERBALI_INTERNI_PB}}
+                        </ul>
+                    </div>
+        
+                </div>
             </div>
-
-            <div id="verbali_ext">
-                <h2>VERBALI ESTERNI</h2>
-                <ul>
-                    {{Verbali Esterni}}
-                </ul>
+            
+            <div id="who" class="content center">
+               <h2>CHI SIAMO</h2> 
+               <div id="members">
+                   <div class="member">
+                       <img src="https://avatars.githubusercontent.com/u/77154362?v=4" alt="">
+                       <p>Diviesti Filippo</p>
+                       <a href="mailto:filippo.diviesti@studenti.unipd.it">filippo.diviesti@studenti.unipd.it</a>
+                    </div>
+                    <div class="member">
+                        <img src="https://avatars.githubusercontent.com/u/87667826?v=4" alt="">
+                        <p>Berghamin Elia</p>
+                        <a href="mailto:elia.berghamin@studenti.unipd.it">elia.berghamin@studenti.unipd.it</a>
+                    </div>
+                    <div class="member">
+                        <img src="https://avatars.githubusercontent.com/u/126813648?v=4" alt="">
+                        <p>Pincin Matteo</p>
+                        <a href="mailto:matteo.pincin@studenti.unipd.it">matteo.pincin@studenti.unipd.it</a>
+                    </div>
+                    <div class="member">
+                        <img src="https://avatars.githubusercontent.com/u/56091337?v=4" alt="">
+                        <p>Soranzo Andrea</p>
+                        <a href="mailto:andreajesus.soranzomendez@studenti.unipd.it">andreajesus.soranzomendez@studenti.unipd.it</a>
+                    </div>
+                <div class="member">
+                    <img src="https://avatars.githubusercontent.com/u/125299013?v=4" alt="">
+                    <p>Edgar Carlos</p>
+                    <a href="mailto:edgar.carlos@studenti.unipd.it">edgar.carlos@studenti.unipd.it</a>
+                </div>
+                <div class="member">
+                    <img src="https://avatars.githubusercontent.com/u/101109132?v=4" alt="">
+                    <p>Chilese Elena</p>
+                    <a href="mailto:elena.chilese@studenti.unipd.it">elena.chilese@studenti.unipd.it</a>
+                </div>
+               </div>
             </div>
+            
         </main>
 
         <footer>
-            <p>Copyright&copy; 2024 by SixBitBusters all right reserved</p>
+            <p>Copyright&copy; 2024-2025 by SixBitBusters all right reserved</p>
         </footer>
 
     </body>
