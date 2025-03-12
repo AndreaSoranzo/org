@@ -24,7 +24,7 @@ jobs:
           for stringa in "${changed_document[@]}"; do
             # document=$(basename "$stringa")
             # echo "$(basename "$stringa")"
-            echo "$stringa"
+            echo "$changed_document"
             # if [[ "$document" == *"$GITHUB_HEAD_REF"* ]]; then
             #   c_doc="$stringa"
             #   echo "$c_doc"
