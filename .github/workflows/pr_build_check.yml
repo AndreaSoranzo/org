@@ -30,7 +30,7 @@ jobs:
           # fi
 
           for stringa in "${lista[@]}"; do
-          if [[ *"$GITHUB_HEAD_REF"* == "$stringa" ]]; then
+          if [[ "$GITHUB_HEAD_REF" == *"$stringa"* ]]; then
             c_doc="$stringa"
             break
           fi
