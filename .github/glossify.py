@@ -9,7 +9,7 @@ G_KEYWORD = r"\\textsubscript{g}"
 SKIP_LATEX_TAGS = [r"\\section",r"\\subsection",r"\\subsubsection",r"\\paragraph",r"\\includegraphics",r"\\url",r"\\includepdf",r"\\nameref"]
 
 def main(UseThread:bool=False):
-    glox_path = path.Path(DOCS_PATH+"PB/Generali/glossario/01_content.tex")
+    glox_path = path.Path(DOCS_PATH+"/PB/Generali/glossario/01_content.tex")
     
     defs = ReadAllWords(glox_path)
 
@@ -19,7 +19,8 @@ def main(UseThread:bool=False):
                 for type in os.listdir(path.Path(DOCS_PATH+"/"+baseline)):
                     if type == "Candidatura": # skippa la candidatura
                         continue
-                    pool.submit(Apply,defs,type)
+                    print(type)
+                    pool.submit(Apply,defs,baseline+"/"+type)
     else:
         ApplyAll(defs)
         # print(defs)
