@@ -17,11 +17,20 @@ jobs:
           git fetch
           changed_files=$(git diff --name-only origin/$GITHUB_BASE_REF | grep '.tex$') || true
           changed_document=$(echo "$changed_files" | cut -d/ -f1-3 | uniq) 
-          # echo "$changed_files"
-          # echo "$changed_document"
+
           echo "${changed_document[*]}"
           
-          echo "doc=$changed_document" >> $GITHUB_OUTPUT
+
+          for stringa in "${changed_document[@]}"; do
+          document=$(basename "$percorso")
+          if [[ "$document" == *"$GITHUB_HEAD_REF"* ]]; then
+            c_doc="$stringa"
+            echo "$c_doc"
+          fi
+          done
+
+
+          echo "doc=$c_doc" >> $GITHUB_OUTPUT
       - name : Install dependencies
         run: |
           if [ -n "${{ steps.find.outputs.doc }}" ]; then
