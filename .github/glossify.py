@@ -27,10 +27,11 @@ def main(UseThread:bool=False):
 
 
 def ApplyAll(defs:list):
-    for type in os.listdir(path.Path(DOCS_PATH)):
-        if type == "Candidatura":
-            continue
-        Apply(defs, type)
+    for baseline in os.listdir(path.Path(DOCS_PATH)):
+        for type in os.listdir(path.Path(DOCS_PATH+"/"+baseline)):
+            if type == "Candidatura":
+                continue
+            Apply(defs, baseline+"/"+type)
 
 def Apply(defs:list, type:str):
     for doc in os.listdir(path.Path(DOCS_PATH+"/"+type)):
