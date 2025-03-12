@@ -22,7 +22,7 @@ jobs:
           
 
           for stringa in "${changed_document[@]}"; do
-          document=$(basename "$percorso")
+          document=$(basename "$stringa")
           if [[ "$document" == *"$GITHUB_HEAD_REF"* ]]; then
             c_doc="$stringa"
             echo "$c_doc"
