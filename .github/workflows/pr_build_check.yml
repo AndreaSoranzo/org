@@ -23,11 +23,11 @@ jobs:
 
           for stringa in "${changed_document[@]}"; do
             document=$(basename "$stringa")
-            echo "$stringa"
-            if [[ "$document" == *"$GITHUB_HEAD_REF"* ]]; then
-              c_doc="$stringa"
-              echo "$c_doc"
-            fi
+            echo "$document"
+            # if [[ "$document" == *"$GITHUB_HEAD_REF"* ]]; then
+            #   c_doc="$stringa"
+            #   echo "$c_doc"
+            # fi
           done
 
 
