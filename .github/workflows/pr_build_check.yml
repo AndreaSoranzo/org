@@ -19,7 +19,7 @@ jobs:
           changed_document=$(echo "$changed_files" | cut -d/ -f1-3 | uniq) 
           echo "$changed_files"
           echo "$changed_document"
-          echo "${changed_document[*]}""
+          echo "${changed_document[*]}"
           
           # if [ $(echo "$changed_document" | wc -l) -gt 1 ]; then
           #   echo "::error::You are supposed to modify one document per branch"
@@ -35,6 +35,8 @@ jobs:
             break
           fi
           done
+
+          echo "$c_doc"
 
           echo "doc=$c_doc" >> $GITHUB_OUTPUT
       - name : Install dependencies
