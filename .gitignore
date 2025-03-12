@@ -8,6 +8,7 @@
 *.log
 *.out
 *.pdf
+!*firmato.pdf
 *.gz
 *.toc
 *.lof
