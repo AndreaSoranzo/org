@@ -22,7 +22,7 @@ jobs:
 
           while IFS= read -r line; do
           document=$(basename "$line")
-          if [[ "$document" == *"$GITHUB_HEAD_REF"* ]]; then
+          if [[ "$GITHUB_HEAD_REF" == *"$document"*]]; then
               c_doc="$stringa"
               echo "$c_doc"
           fi
