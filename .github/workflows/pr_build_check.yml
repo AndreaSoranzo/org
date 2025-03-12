@@ -19,17 +19,22 @@ jobs:
           changed_document=$(echo "$changed_files" | cut -d/ -f1-3 | uniq) 
 
           echo "${changed_document[*]}"
+
+          while IFS= read -r line; do
+          echo "... $line ..."
+          done <<< "$changed_document"
+
           
 
-          for stringa in "${changed_document[@]}"; do
-            # document=$(basename "$stringa")
-            # echo "$(basename "$stringa")"
-            echo "$changed_document"
-            # if [[ "$document" == *"$GITHUB_HEAD_REF"* ]]; then
-            #   c_doc="$stringa"
-            #   echo "$c_doc"
-            # fi
-          done
+          # for stringa in "${changed_document[@]}"; do
+          #   # document=$(basename "$stringa")
+          #   # echo "$(basename "$stringa")"
+          #   echo "$changed_document"
+          #   # if [[ "$document" == *"$GITHUB_HEAD_REF"* ]]; then
+          #   #   c_doc="$stringa"
+          #   #   echo "$c_doc"
+          #   # fi
+          # done
 
 
           echo "doc=$c_doc" >> $GITHUB_OUTPUT
