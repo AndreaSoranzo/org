@@ -14,11 +14,12 @@ def main(UseThread:bool=False):
     defs = ReadAllWords(glox_path)
 
     if UseThread:
-        with concurrent.futures.ThreadPoolExecutor(3) as pool: # with -> automatically wait for all threads
-            for type in os.listdir(path.Path(DOCS_PATH)):
-                if type == "Candidatura": # skippa la candidatura
-                    continue
-                pool.submit(Apply,defs,type)
+        with concurrent.futures.ThreadPoolExecutor(2) as pool: # with -> automatically wait for all threads
+            for baseline in os.listdir(path.Path(DOCS_PATH)):
+                for type in os.listdir(path.Path(DOCS_PATH+"/"+baseline)):
+                    if type == "Candidatura": # skippa la candidatura
+                        continue
+                    pool.submit(Apply,defs,type)
     else:
         ApplyAll(defs)
         # print(defs)
