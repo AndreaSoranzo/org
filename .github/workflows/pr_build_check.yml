@@ -21,7 +21,7 @@ jobs:
           echo "${changed_document[*]}"
 
           while IFS= read -r line; do
-          document=$(basename "$stringa")
+          document=$(basename "$line")
           echo "$document"
           done <<< "$changed_document"
 
