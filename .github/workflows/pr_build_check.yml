@@ -22,25 +22,11 @@ jobs:
 
           while IFS= read -r line; do
           document=$(basename "$line")
-          echo "$GITHUB_HEAD_REF"
           if [[ "$GITHUB_HEAD_REF" == *"$document"* ]]; then
               c_doc="$stringa"
-              echo "$c_doc"
+              echo "hello"
           fi
           done <<< "$changed_document"
-
-          
-
-          # for stringa in "${changed_document[@]}"; do
-          #   # document=$(basename "$stringa")
-          #   # echo "$(basename "$stringa")"
-          #   echo "$changed_document"
-          #   # if [[ "$document" == *"$GITHUB_HEAD_REF"* ]]; then
-          #   #   c_doc="$stringa"
-          #   #   echo "$c_doc"
-          #   # fi
-          # done
-
 
           echo "doc=$c_doc" >> $GITHUB_OUTPUT
       - name : Install dependencies
