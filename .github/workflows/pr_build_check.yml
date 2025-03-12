@@ -23,7 +23,7 @@ jobs:
           while IFS= read -r line; do
           document=$(basename "$line")
           if [[ "$GITHUB_HEAD_REF" == *"$document"* ]]; then
-              c_doc="$stringa"
+              c_doc="$line"
               echo "hello"
           fi
           done <<< "$changed_document"
