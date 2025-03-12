@@ -19,15 +19,24 @@ jobs:
           changed_document=$(echo "$changed_files" | cut -d/ -f1-3 | uniq) 
           echo "$changed_files"
           echo "$changed_document"
+          echo "${changed_document[*]}""
           
-          if [ $(echo "$changed_document" | wc -l) -gt 1 ]; then
-            echo "::error::You are supposed to modify one document per branch"
-            echo "::error::You modified: $changed_document"
-            exit 1
-          elif [ $(echo "$changed_document" | wc -l) -eq 0 ]; then 
-            echo "No document was modified"
+          # if [ $(echo "$changed_document" | wc -l) -gt 1 ]; then
+          #   echo "::error::You are supposed to modify one document per branch"
+          #   echo "::error::You modified: $changed_document"
+          #   exit 1
+          # elif [ $(echo "$changed_document" | wc -l) -eq 0 ]; then 
+          #   echo "No document was modified"
+          # fi
+
+          for stringa in "${lista[@]}"; do
+          if [[ *"$GITHUB_HEAD_REF"* == "$stringa" ]]; then
+            c_doc="$stringa"
+            break
           fi
-          echo "doc=$changed_document" >> $GITHUB_OUTPUT
+          done
+
+          echo "doc=$c_doc" >> $GITHUB_OUTPUT
       - name : Install dependencies
         run: |
           if [ -n "${{ steps.find.outputs.doc }}" ]; then
