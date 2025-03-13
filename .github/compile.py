@@ -84,31 +84,6 @@ def UpdateHtml(html:str,pdfs:dict[str, list]):
         pdfs[type].sort(reverse=True)
         t_doc = type.split("/")[1]+"_"+type.split("/")[0]
         html = html.replace("{{"+ t_doc +"}}","\n".join(MakeLink(pdf) for pdf in pdfs[type]))
-        # t_class = type.split("/")[0]
-        # t_type = type.split("/")[0]
-        # if "CC" in type:
-        # elif "PB" in type:
-        #     t_doc = type.split("/")[1]+"_CAPITOLATO"
-        #     html = html.replace("{{"+ t_doc +"}}","\n".join(MakeLink(pdf) for pdf in pdfs[type]))
-        # if "RTB" in type:
-        #     t_doc = type.split("/")[1]+"_CAPITOLATO"
-        #     html = html.replace("{{"+ t_doc +"}}","\n".join(MakeLink(pdf) for pdf in pdfs[type]))
-
-        # if type=="Generali":
-        #     html = html.replace("{{Generali}}","<h2>Documentazione Interna</h2><ul>{{Generali Interni}}</ul><h2>Documentazione Esterna</h2><ul>{{Generali Esterni}}</ul>")
-        #     pdfs[type].sort(reverse=True)
-        #     i = []
-        #     e = []
-        #     for pdf in pdfs[type]:
-        #         if pdf.GetUse() == "Interno":
-        #             i.append(MakeLink(pdf))
-        #         if pdf.GetUse() == "Esterno":
-        #             e.append(MakeLink(pdf))
-        #     html = html.replace("{{Generali Interni}}","\n".join(l for l in i))
-        #     html = html.replace("{{Generali Esterni}}","\n".join(l for l in e))
-        # else:
-        #     pdfs[type].sort(reverse=True)
-        #     html = html.replace("{{"+ type +"}}","\n".join(MakeLink(pdf) for pdf in pdfs[type]))
 
     path.Path('_site/index.html').write_text(html)
 
