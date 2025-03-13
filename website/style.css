@@ -195,6 +195,7 @@ main .expandable:hover:after{
 
 main #docs  a {
     position: relative;
+    white-space: nowrap;
 }
 
 main a:hover {
